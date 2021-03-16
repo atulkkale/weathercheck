@@ -353,6 +353,80 @@ header nav ul li a:hover{
   line-height: 1.6;
 }
 
+/* Awesome photos section starts */
+.awesome-photos{
+  padding: 60px 0;
+  background-color: #1e202b;
+}
+
+.awesome-photos .wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.awesome-photos ul{ flex-basis: 30%;}
+
+.app-features li:first-child,.weather-ana li:first-child,.awesome h2:first-child{
+  padding: 0;
+  border: none;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 31px;
+}
+
+.app-features li{ padding-left: 30px;}
+
+.app-features h3{ 
+  margin: 10px 0 15px 0;
+  position: relative;
+}
+
+.app-features h3::before,.weather-ana li a::before{
+  content: url(../images/arrow.png);
+  position: absolute;
+  left: -30px;
+}
+
+.weather-ana li a::before{
+  top: 13px;
+  left: 0;
+}
+
+.app-features h3 a{ 
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.app-features p{
+  color: #9799a1;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.weather-ana li{
+  padding: 10px 0 10px 30px;
+  border-bottom: 1px solid #383838;
+  position: relative;
+}
+
+.weather-ana li:last-child{ border: none;}
+
+.weather-ana li a{
+  color: #fff;
+  font-size: 12px;
+}
+
+.awesome ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.awesome ul li{ cursor: pointer;}
+
+.app-features li:first-child::first-letter,.app-features h3 a::first-letter,.app-features p,.weather-ana li::first-letter,.awesome h2:first-child{ text-transform: capitalize;}
 /*=================================
   Main styling ends here
 =================================*/ 
