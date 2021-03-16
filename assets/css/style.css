@@ -552,6 +552,8 @@ footer p{
 @media only screen and (max-width: 1750px){
   .videos li figure:first-child img{ width: 240px;}
 
+  .videos li figure:first-child{ margin-top: 10px;}
+
   .videos li figure:nth-child(2){ top: 60px;}
 }
 
