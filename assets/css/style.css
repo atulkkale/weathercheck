@@ -251,9 +251,7 @@ header nav ul li a:hover{
   left: 30px;
 }
 
-.temp-info img{
-  width: 90px;
-}
+.temp-info img{ width: 90px;}
 
 .humidity-air{
   padding: 10px 24px 30px 24px;
@@ -284,9 +282,7 @@ header nav ul li a:hover{
   justify-content: space-between;
 }
 
-.videos li{
-  position: relative;
-}
+.videos li{ position: relative;}
 
 .videos li figure:first-child img{
   width: 240px;
@@ -317,6 +313,44 @@ header nav ul li a:hover{
   bottom: -20px;
   color: #9799a1;
   font-size: 11px;
+}
+
+/* Info section styling starts */
+.info{ 
+  padding: 70px 0;
+  background-color: #262936;
+}
+
+.info ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info ul li{
+  display: grid;
+  grid-template-columns: 70px 270px;
+}
+
+.info ul li h2{
+  grid-row-start: 1;
+  grid-row-end: 4;
+  color: #409ad8;
+  font-size: 19px;
+}
+
+.info ul li h3{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.info ul li h3::first-letter,.info ul li p::first-letter{ text-transform: uppercase;}
+
+.info ul li p{
+  margin: 20px 0 20px 0;
+  color: #9799a1;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 /*=================================
