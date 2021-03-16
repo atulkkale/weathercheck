@@ -102,11 +102,28 @@ sub { bottom: -.25em; }
   Header styling starts here
 =================================*/  
 
+/* Hamburger style */
+.hamburger{
+  height: 2px;
+  width: 12px;
+  position: relative;
+  border-top: 2px solid #409ad8;
+  padding-top: 2px;
+  display: none;
+}
+
+.hamburger span{
+  height: 2px;
+  width: 12px;
+  border-top: 2px solid #409ad8;
+  border-bottom: 2px solid #409ad8;
+  display: inline-block;
+  text-indent: -2000px;
+}
+
 header{ background-color: #1e202b;}
 
 header .wrapper a{ color: #fff;}
-
-.hamburger{ display: none;}
 
 header .wrapper{
   padding: 40px 0;
@@ -294,6 +311,7 @@ header nav ul li a:hover{
   top: 85px;
   left: 50%;
   transform: translate(-50%,0);
+  cursor: pointer;
 }
 
 .live-cameras h2{
@@ -486,9 +504,7 @@ footer ul{
   float: right;
 }
 
-.social-icons li{ margin-right: 5px;}
-
-.social-icons li:last-child{ margin: 0;}
+.social-icons li{ margin: auto 2px;}
 
 .social-icons li a{
   display: inline-block;
@@ -531,3 +547,84 @@ footer p{
 /*=================================
   Footer styling ends here
 =================================*/ 
+
+/* Media query starts */
+@media only screen and (max-width: 1750px){
+  .videos li figure:first-child img{ width: 240px;}
+
+  .videos li figure:nth-child(2){ top: 60px;}
+}
+
+/* Media query for 1300px starts here */
+@media only screen and (max-width: 1300px){
+  /* Hamburger style */
+  header nav .menu{ display: none;}
+
+  .hamburger{ display: block;}
+
+  .hamburger-hover-style::after{
+    content: "";
+    height: 37px;
+    width: 35px;
+    border: 2px solid #409ad8;
+    border-radius: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    text-indent: -2000px;
+  }
+
+  .videos{ flex-direction: column;}
+
+  .videos li{ align-self: flex-start;}
+
+  .info ul{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info ul li:nth-child(2),.info ul li:nth-child(3){ margin-top: 20px;}
+
+  .awesome-photos .wrapper{ flex-direction: column;}
+
+  .weather-ana li:first-child{ margin-top: 20px;}
+
+  .awesome h2{ margin-top: 20px;}
+}
+
+/* Media query for 900px starts here */
+@media only screen and (max-width: 900px){
+  .result{
+    width: 70%;
+    bottom: -65%;
+  }
+
+  .humidity-air li{ margin-right: 10px;}
+
+  .temp-info{ flex-direction: column;}
+
+  .temp-info figure{ left: 0;}
+
+  .live-cameras{ padding: 300px 0 90px 0;}
+
+  .awesome ul li img{
+    width: 80px;
+  }
+
+  footer form, footer ul{
+    margin: 0;
+    float: none;
+  }
+
+  footer form{ width: 99%;}
+
+  footer ul{
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .social-icons{ margin-top: 20px;}
+
+  footer p{ padding: 0;}
+}
