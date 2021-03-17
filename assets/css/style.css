@@ -583,8 +583,39 @@ footer p{
 
 /* Media query for 1300px starts here */
 @media only screen and (max-width: 1300px){
-  /* Hamburger style */
-  header nav .menu{ display: none;}
+  /* Hamburger style */ 
+  header .wrapper{  position: relative;}
+
+  header nav .menu{ 
+    width: 100%;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: -260px;
+    transform: translate(-50%,0);
+    text-align: center;
+    transition: 5s;
+  }
+
+  header nav .menu li{
+    padding: 15px 0;
+    border-bottom: 1px solid #484848;
+    background-color: #262936;
+  }
+
+  header nav .menu li:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  header nav .menu li:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+  }
+
+  header nav .menu li a{ font-size: 14px;}
 
   .hamburger{ display: block;}
 

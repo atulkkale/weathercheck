@@ -1,3 +1,22 @@
+// Hamburger
+var hamburger = document.querySelector('.hamburger');
+var menu = document.querySelector('.menu');
+var header = document.querySelector('header');
+
+hamburger.addEventListener('click',toggleMenu);
+var clickRecord = 0;
+function toggleMenu(){
+  if(clickRecord === 0){
+    menu.style.cssText = "display:block;";
+    header.style.cssText = "height: 420px;"
+    clickRecord = 1;
+  } else {
+    menu.style.cssText = "display:none;";
+    header.style.cssText = "height: auto;"
+    clickRecord = 0;
+  } 
+}
+
 // Ajax call.
 var apiKey = '5a23d8283cd00609e5130d95f233af52'; // Stored api key.
 
