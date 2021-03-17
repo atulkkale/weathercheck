@@ -189,6 +189,7 @@ header nav ul li a:hover{
 
 .search-weather form{
   width: 99%;
+  height: 50px;
   position: relative;
   text-align: center;
 }
@@ -219,7 +220,7 @@ header nav ul li a:hover{
 
 .search-weather form input{
   width: 96.6%;
-  height: 50px;
+  height: 99%;
   padding: 0 0 0 3%;
   border: 1px solid #1e202b;
   border-radius: 50px;
@@ -234,12 +235,13 @@ header nav ul li a:hover{
   border: none;
   border-radius: 50px;
   position: absolute;
-  top: 8.7%;
+  top: 9%;
   right: 1%;
   display: inline-block;
   background-color: #409ad8;
   color: #fff;
   text-transform: capitalize;
+  outline: none;
 }
 
 .search-weather form button:hover{
@@ -512,6 +514,7 @@ footer form button{
   background-color: #409ad8;
   color: #fff;
   text-transform: capitalize;
+  outline: none;
 }
 
 footer form button:hover{
@@ -632,7 +635,7 @@ footer p{
     text-indent: -2000px;
   }
 
-  .videos{ flex-direction: column;}
+  .videos{ flex-wrap: wrap;}
 
   .videos li{ align-self: flex-start;}
 
@@ -643,11 +646,35 @@ footer p{
 
   .info ul li:nth-child(2),.info ul li:nth-child(3){ margin-top: 20px;}
 
+  .app-features{ align-self: flex-start;}
+
+  .weather-ana{ align-self: flex-start;}
+
+  .awesome{ align-self: flex-start;}
+
   .awesome-photos .wrapper{ flex-direction: column;}
 
   .weather-ana li:first-child{ margin-top: 20px;}
 
   .awesome h2{ margin-top: 20px;}
+
+  /* Disable hover effects */
+  header nav ul li a:hover{
+    border: none;
+    color: #fff;
+  }
+
+  .search-weather form button:hover{
+    background-color: #409ad8;
+  }
+
+  footer form button:hover{
+    background-color: #409ad8;
+  }
+
+  .social-icons li a:hover::before{
+    color: #409ad8;
+  }
 }
 
 /* Media query for 900px starts here */
@@ -664,6 +691,8 @@ footer p{
   .temp-info figure{ left: 0;}
 
   .live-cameras{ padding: 300px 0 90px 0;}
+
+  .info ul li{ grid-template-columns: 65px 210px;}
 
   .awesome ul li img{
     width: 80px;
