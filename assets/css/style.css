@@ -586,7 +586,7 @@ footer p{
 
 /* Media query for 1300px starts here */
 @media only screen and (max-width: 1300px){
-  /* Hamburger style */ 
+  /* Hamburger style */
   header .wrapper{  position: relative;}
 
   header nav .menu{ 
@@ -633,6 +633,14 @@ footer p{
     left: 50%;
     transform: translate(-50%,-45%);
     text-indent: -2000px;
+  }
+
+  header nav .block{
+    display: block;
+  }
+
+  .none{
+    display: none;
   }
 
   .videos{ flex-wrap: wrap;}

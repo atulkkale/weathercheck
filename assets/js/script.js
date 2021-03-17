@@ -7,11 +7,13 @@ hamburger.addEventListener('click',toggleMenu);
 var clickRecord = 0;
 function toggleMenu(){
   if(clickRecord === 0){
-    menu.style.cssText = "display:block;";
+    menu.classList.remove('none');
+    menu.classList.add('block');
     header.style.cssText = "height: 420px;"
     clickRecord = 1;
   } else {
-    menu.style.cssText = "display:none;";
+    menu.classList.remove('block');
+    menu.classList.add('none');
     header.style.cssText = "height: auto;"
     clickRecord = 0;
   } 
