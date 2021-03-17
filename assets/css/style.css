@@ -193,8 +193,20 @@ header nav ul li a:hover{
   text-align: center;
 }
 
-.error-name form::after{
+.error-name::after{
   content: "There are problem with request, please enter proper city name!";
+  padding: 7px 15px;
+  border-radius: 10px;
+  position: relative;
+  top: 20px;
+  color: #409ad8;
+  text-shadow: 2px 2px 30px red;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.error-null::after{
+  content: "This field is Required";
   padding: 7px 15px;
   border-radius: 10px;
   position: relative;

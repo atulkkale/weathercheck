@@ -1,3 +1,4 @@
+// Ajax call.
 var apiKey = '5a23d8283cd00609e5130d95f233af52'; // Stored api key.
 
 var uiDateTime = document.querySelector('.date-time');
@@ -10,9 +11,12 @@ var uiWeatherImg = document.querySelector('.temp-info figure img');
 var uiFindBtn = document.querySelector('.search-weather form button');
 
 uiFindBtn.addEventListener('click', makeRequest);
+uiFindBtn.addEventListener('click', validate);
+
 makeRequest();
 function makeRequest(e){
   if(e) e.preventDefault();
+  uiFindBtn.parentNode.classList.remove('error-name'); // Remove error message.
   var uiUserInput = document.querySelector('.search-weather form input').value || "Mumbai";
   var xmlObj = new XMLHttpRequest();
   xmlObj.open('GET','https://api.openweathermap.org/data/2.5/weather?q=' + uiUserInput + '&appid=' + apiKey);
@@ -23,23 +27,15 @@ function makeRequest(e){
     var dateTime = new Date();
     if (xmlObj.status === 200) {
       var response = JSON.parse(xmlObj.responseText);
-      var day = dateTime.toLocaleString('default', {weekday:'long'});
-      var date = dateTime.getDate();
-      var month = dateTime.toLocaleString('default', {month:'short'});
-      var responseCityName = response.name;
-      var temp = Math.round(response.main.temp - 273.15);
-      var humidity = response.main.humidity;
-      var windSpeed = Math.round(response.wind.speed * 3.6);
-      var degree = response.wind.deg;
-      var weatherIcon = response.weather[0].main;
   
-      uiDateTime.children[0].textContent = day; // Insert all response in UI.
-      uiDateTime.children[1].textContent = date + " " + month;
-      uiCityName.textContent = responseCityName;
-      uiTemp.textContent = temp + "\u00B0" + "c";
-      uiHumidity.textContent = humidity + "%";
-      uiAirSpeed.textContent = windSpeed + "km/h";
-      uiDirection.textContent = degree;
+      uiDateTime.children[0].textContent = dateTime.toLocaleString('default', {weekday:'long'}); // Insert all response in UI.
+      uiDateTime.children[1].textContent = dateTime.getDate() + " " + dateTime.toLocaleString('default', {month:'short'});
+      uiCityName.textContent = response.name;
+      uiTemp.textContent = Math.round(response.main.temp - 273.15) + "\u00B0" + "c";
+      uiHumidity.textContent = response.main.humidity + "%";
+      uiAirSpeed.textContent = Math.round(response.wind.speed * 3.6) + "km/h";
+      uiDirection.textContent = response.wind.deg;
+      var weatherIcon = response.weather[0].main;
   
       switch (weatherIcon) { // Switch statement for change image depend upon weather.
         case "Drizzle":
@@ -74,8 +70,15 @@ function makeRequest(e){
       }
   
     } else {
-      console.log('There are problem with request please enter proper city name!');
+      uiFindBtn.parentNode.classList.add('error-name'); // Show error message to user.
     }
   }
 }
 
+function validate(e){
+  e.preventDefault();
+  uiFindBtn.parentNode.classList.remove('error-name');
+  var uiUserInput = document.querySelector('.search-weather form input').value;
+  var regex = /^[a-zA-Z]{2,12}$/; 
+  uiUserInput === "" ? uiFindBtn.parentNode.classList.add('error-null') : uiFindBtn.parentNode.classList.remove('error-null');
+}
