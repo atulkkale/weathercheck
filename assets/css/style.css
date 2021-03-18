@@ -750,7 +750,7 @@ footer p{
 
 .nav-history li:first-child a{ color: #a7a7a7;}
 
-.nav-history figure{ margin: 0 10px;}
+.nav-history li:nth-child(2){ margin: 0 10px;}
 
 .all-photoswith-info{
   padding: 70px 0;
